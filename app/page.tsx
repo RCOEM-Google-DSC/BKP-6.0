@@ -1,21 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import confetti from "canvas-confetti";
 import {
-  Sparkles,
   MapPin,
-  Flame,
   Clock,
   ArrowRight,
   Mail,
-  Phone,
-  CheckCircle2,
-  X,
-  Globe,
-  Camera,
-  Video,
-  Send,
   Heart
 } from "lucide-react";
 import GanpatiHeroElement from "@/components/GanpatiHeroElement";
@@ -30,22 +20,9 @@ const SPONSORS = [
   { name: "GDG CCOEW", category: "Student Network", role: "Campus Partner" },
 ];
 
+const REGISTRATION_URL = "https://unstop.com/p/bappa-ka-prashad-60-google-developer-groupgdg-rbu-1752279";
+
 export default function Home() {
-  // --- REGISTRATION MODAL STATES ---
-  const [isRegisterOpen, setIsRegisterOpen] = useState<boolean>(false);
-  const [regForm, setRegForm] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    college: "",
-    category: "General Pass",
-  });
-  const [regSubmitted, setRegSubmitted] = useState<boolean>(false);
-
-  // Newsletter state
-  const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [newsletterSubscribed, setNewsletterSubscribed] = useState(false);
-
   // Countdown Timer target: Sept 20, 2026 at 8:00 PM
   const calculateTimeLeft = () => {
     const target = new Date("2026-09-20T20:00:00+05:30").getTime();
@@ -73,30 +50,6 @@ export default function Home() {
     }, 1000);
     return () => clearInterval(timer);
   }, []);
-
-  const triggerCelebration = () => {
-    confetti({
-      particleCount: 80,
-      spread: 60,
-      origin: { y: 0.6 },
-      colors: ["#FF941A", "#DA392F", "#FFFFFF"]
-    });
-  };
-
-  const handleRegisterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setRegSubmitted(true);
-    triggerCelebration();
-  };
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (newsletterEmail) {
-      setNewsletterSubscribed(true);
-      setTimeout(() => setNewsletterSubscribed(false), 5000);
-      setNewsletterEmail("");
-    }
-  };
 
   return (
     <div className="min-h-screen bg-white text-zinc-900 selection:bg-[#FF941A] selection:text-black font-sans overflow-x-hidden">
@@ -139,15 +92,14 @@ export default function Home() {
               <a href="#partners" className="hover:text-white transition-colors">Partners</a>
             </nav>
 
-            <button
-              onClick={() => {
-                setIsRegisterOpen(true);
-                setRegSubmitted(false);
-              }}
-              className="px-5 py-2.5 rounded-full bg-white text-zinc-950 hover:bg-amber-100 text-xs font-bold tracking-wide transition-all shadow-md"
+            <a
+              href={REGISTRATION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 rounded-full bg-white text-zinc-950 hover:bg-amber-100 text-xs font-bold tracking-wide transition-all shadow-md inline-block"
             >
               Register Now
-            </button>
+            </a>
           </div>
 
         </div>
@@ -171,16 +123,15 @@ export default function Home() {
               </p>
 
               <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
-                <button
-                  onClick={() => {
-                    setIsRegisterOpen(true);
-                    setRegSubmitted(false);
-                  }}
+                <a
+                  href={REGISTRATION_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white text-zinc-950 font-bold text-sm shadow-md hover:bg-amber-50 transition-all flex items-center justify-center gap-2"
                 >
                   <span>Participate Now</span>
                   <ArrowRight className="w-4 h-4 text-[#DA392F]" />
-                </button>
+                </a>
 
                 <a
                   href="#about"
@@ -386,9 +337,14 @@ export default function Home() {
               </h4>
               <ul className="space-y-2.5 font-light text-white/60">
                 <li>
-                  <button onClick={() => setIsRegisterOpen(true)} className="hover:text-white transition-colors">
+                  <a
+                    href={REGISTRATION_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
                     Contest Registration
-                  </button>
+                  </a>
                 </li>
                 <li>
                   <a href="#about" className="hover:text-white transition-colors">
@@ -433,98 +389,6 @@ export default function Home() {
 
         </div>
       </footer>
-
-      {/* --- MINIMAL REGISTRATION MODAL --- */}
-      {isRegisterOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div className="bg-[#8A112A] border border-white/20 w-full max-w-md rounded-2xl p-6 sm:p-8 relative shadow-2xl text-white">
-            
-            <button
-              onClick={() => setIsRegisterOpen(false)}
-              className="absolute top-4 right-4 text-white/70 hover:text-white p-1 rounded-lg"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            {!regSubmitted ? (
-              <>
-                <div className="text-center mb-6">
-                  <img
-                    src="/gdg-logo.png"
-                    alt="GDG Logo"
-                    className="h-8 w-auto object-contain mx-auto mb-2.5"
-                  />
-                  <h3 className="text-2xl font-normal font-heading text-white">Bappa Ka Prashad 6.0</h3>
-                  <p className="text-xs text-amber-200/70 mt-0.5">Register for the competitive programming contest</p>
-                </div>
-
-                <form onSubmit={handleRegisterSubmit} className="space-y-3.5">
-                  <div>
-                    <label className="block text-[11px] font-mono text-amber-200/80 mb-1 uppercase">Full Name</label>
-                    <input
-                      required
-                      type="text"
-                      placeholder="e.g. Aarav Sharma"
-                      value={regForm.fullName}
-                      onChange={(e) => setRegForm({ ...regForm, fullName: e.target.value })}
-                      className="w-full bg-black/20 border border-white/20 rounded-xl px-3.5 py-2 text-xs text-white placeholder:text-amber-100/30 outline-none focus:border-white/50"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-[11px] font-mono text-amber-200/80 mb-1 uppercase">Email Address</label>
-                    <input
-                      required
-                      type="email"
-                      placeholder="aarav@college.edu"
-                      value={regForm.email}
-                      onChange={(e) => setRegForm({ ...regForm, email: e.target.value })}
-                      className="w-full bg-black/20 border border-white/20 rounded-xl px-3.5 py-2 text-xs text-white placeholder:text-amber-100/30 outline-none focus:border-white/50"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-[11px] font-mono text-amber-200/80 mb-1 uppercase">College / Institution</label>
-                    <input
-                      required
-                      type="text"
-                      placeholder="e.g. Ramdeobaba University"
-                      value={regForm.college}
-                      onChange={(e) => setRegForm({ ...regForm, college: e.target.value })}
-                      className="w-full bg-black/20 border border-white/20 rounded-xl px-3.5 py-2 text-xs text-white placeholder:text-amber-100/30 outline-none focus:border-white/50"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full py-3 rounded-xl bg-white text-zinc-950 font-bold text-xs shadow hover:bg-amber-50 transition-all mt-4"
-                  >
-                    Confirm Registration
-                  </button>
-                </form>
-              </>
-            ) : (
-              <div className="text-center py-4">
-                <div className="w-12 h-12 rounded-full bg-white/20 text-emerald-300 flex items-center justify-center mx-auto mb-3">
-                  <CheckCircle2 className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-normal font-heading text-white mb-1">Registration Confirmed</h3>
-                <p className="text-xs text-amber-100/80 mb-4">
-                  Contest registration complete for <span className="font-semibold text-white">{regForm.fullName}</span>. Check your inbox for competition guidelines and access details.
-                </p>
-
-                <button
-                  onClick={() => setIsRegisterOpen(false)}
-                  className="px-6 py-2.5 rounded-full bg-white text-zinc-950 font-medium text-xs"
-                >
-                  Close
-                </button>
-              </div>
-            )}
-
-          </div>
-        </div>
-      )}
 
     </div>
   );
