@@ -1,5 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-sans: 'Product Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Product Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Product Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Mileast', 'Marcellus', 'Cinzel', serif;
+}
 
 html {
   font-size: 112%;
@@ -18,7 +25,7 @@ html {
 @font-face {
   font-family: 'Product Sans';
   src: url('/fonts/ProductSans-Regular.woff') format('woff');
-  font-weight: 400;
+  font-weight: 100 500;
   font-style: normal;
   font-display: swap;
 }
@@ -26,42 +33,41 @@ html {
 @font-face {
   font-family: 'Product Sans';
   src: url('/fonts/ProductSans-Bold.woff') format('woff');
-  font-weight: 700;
+  font-weight: 600 900;
   font-style: normal;
   font-display: swap;
 }
 
-@layer base {
-  :root {
-    --font-heading: 'Mileast', 'Marcellus', 'Cinzel', serif;
-    --font-body: 'Product Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
-  }
+@font-face {
+  font-family: 'Product Sans';
+  src: url('/fonts/ProductSans-Regular.woff') format('woff');
+  font-weight: 100 500;
+  font-style: italic;
+  font-display: swap;
+}
 
-  body {
-    font-family: var(--font-body);
-    background-color: #ffffff;
-    color: #18181b;
-    overflow-x: hidden;
-  }
+@font-face {
+  font-family: 'Product Sans';
+  src: url('/fonts/ProductSans-Bold.woff') format('woff');
+  font-weight: 600 900;
+  font-style: italic;
+  font-display: swap;
+}
 
-  /* Every element defaults to Product Sans unless overridden */
-  *, *::before, *::after {
-    font-family: inherit;
-  }
+body {
+  font-family: 'Product Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #ffffff;
+  color: #18181b;
+  overflow-x: hidden;
+}
 
-  .font-sans, .font-serif, .font-mono {
-    font-family: var(--font-body);
-  }
+/* Ensure all non-heading elements strictly use Product Sans */
+body, input, button, select, textarea, p, span, a, div, li, ul, label, nav, footer, header, main, section {
+  font-family: 'Product Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
 
-  h1, h2, h3, h4, .font-heading {
-    font-family: var(--font-heading);
-  }
-
-  /* Use this only for actual code / numbers that need monospace */
-  .font-code {
-    font-family: var(--font-mono);
-  }
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Mileast', 'Marcellus', 'Cinzel', serif !important;
 }
 
 .text-gradient-fire {

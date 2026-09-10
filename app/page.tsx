@@ -171,30 +171,30 @@ export default function Home() {
               <Clock className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-xs font-mono uppercase tracking-wider text-amber-200/70">Countdown</div>
+              <div className="text-xs uppercase tracking-wider text-amber-200/70">Countdown</div>
               <div className="text-base font-semibold font-heading text-white">Contest Begins In</div>
             </div>
           </div>
 
           <div className="flex items-center gap-6 sm:gap-10 text-center">
             <div>
-              <div className="text-3xl sm:text-4xl font-extrabold font-mono text-white">{timeLeft?.days ?? "--"}</div>
-              <div className="text-[11px] font-mono text-amber-200/60 uppercase mt-0.5">Days</div>
+              <div className="text-3xl sm:text-4xl font-extrabold text-white">{timeLeft?.days ?? "--"}</div>
+              <div className="text-[11px] text-amber-200/60 uppercase mt-0.5">Days</div>
             </div>
             <span className="text-2xl font-light text-white/30">:</span>
             <div>
-              <div className="text-3xl sm:text-4xl font-extrabold font-mono text-white">{timeLeft?.hours ?? "--"}</div>
-              <div className="text-[11px] font-mono text-amber-200/60 uppercase mt-0.5">Hours</div>
+              <div className="text-3xl sm:text-4xl font-extrabold text-white">{timeLeft?.hours ?? "--"}</div>
+              <div className="text-[11px] text-amber-200/60 uppercase mt-0.5">Hours</div>
             </div>
             <span className="text-2xl font-light text-white/30">:</span>
             <div>
-              <div className="text-3xl sm:text-4xl font-extrabold font-mono text-white">{timeLeft?.minutes ?? "--"}</div>
-              <div className="text-[11px] font-mono text-amber-200/60 uppercase mt-0.5">Mins</div>
+              <div className="text-3xl sm:text-4xl font-extrabold text-white">{timeLeft?.minutes ?? "--"}</div>
+              <div className="text-[11px] text-amber-200/60 uppercase mt-0.5">Mins</div>
             </div>
             <span className="text-2xl font-light text-white/30">:</span>
             <div>
-              <div className="text-3xl sm:text-4xl font-extrabold font-mono text-white">{timeLeft?.seconds ?? "--"}</div>
-              <div className="text-[11px] font-mono text-amber-200/60 uppercase mt-0.5">Secs</div>
+              <div className="text-3xl sm:text-4xl font-extrabold text-white">{timeLeft?.seconds ?? "--"}</div>
+              <div className="text-[11px] text-amber-200/60 uppercase mt-0.5">Secs</div>
             </div>
           </div>
 
@@ -207,7 +207,7 @@ export default function Home() {
       {/* --- ABOUT SECTION (white) --- */}
       <section id="about" className="py-20 bg-white">
         <div className="max-w-2xl mx-auto px-6 text-center">
-          <span className="text-xs font-mono text-[#AB232D] uppercase tracking-widest">About the Contest</span>
+          <span className="text-xs text-[#AB232D] uppercase tracking-widest font-medium">About the Contest</span>
           <h2 className="text-3xl font-normal font-heading text-zinc-900 mt-2 mb-4">What is Bappa Ka Prashad?</h2>
           <p className="text-zinc-600 leading-relaxed font-light text-base">
             Bappa Ka Prashad is an annual competitive programming contest organized by GDG On Campus, Ramdeobaba University. Aimed at spreading the joy of technical problem solving, it features 6 to 7 Ganesh Chaturthi-themed algorithmic problems that challenge coders of all skill levels. The contest blends algorithmic rigor with a festive twist rooted in Indian culture, celebrating logic, learning, and the passion for coding during Ganesh Chaturthi.
@@ -222,7 +222,7 @@ export default function Home() {
           <h2 className="text-3xl sm:text-4xl font-normal font-heading text-zinc-700 mb-2">
             Contest Prizes
           </h2>
-          <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-16">
+          <p className="text-xs text-zinc-500 uppercase tracking-widest mb-16 font-medium">
             Compete for cash rewards and prestigious recognition
           </p>
 
@@ -260,7 +260,7 @@ export default function Home() {
 
           <div className="text-center max-w-xl mx-auto mb-12">
             <h2 className="text-2xl sm:text-3xl font-normal font-heading text-zinc-900 mt-1">
-              COMMUNITY & DEVELOPER <span className="italic font-serif text-gradient-fire-dark">PARTNERS</span>
+              COMMUNITY &amp; DEVELOPER <span className="italic text-gradient-fire-dark">PARTNERS</span>
             </h2>
             <p className="text-zinc-600 text-xs sm:text-sm leading-relaxed mt-3 font-light">
               We are grateful to our developer communities, student organizations, and partners whose support powers Bappa Ka Prashad, fostering learning and competitive programming excellence.
@@ -270,7 +270,7 @@ export default function Home() {
           <div className="flex justify-center">
             <div className="flex flex-col items-center gap-3">
               <img src="/codechef.png" alt="CodeChef" className="w-auto h-[280px] object-contain" />
-              <span className="text-xs font-mono text-[#AB232D] uppercase tracking-widest">Platform Partner</span>
+              <span className="text-xs text-[#AB232D] uppercase tracking-widest font-medium">Platform Partner</span>
             </div>
           </div>
 
@@ -331,9 +331,9 @@ export default function Home() {
 
             {/* QUICK LINKS */}
             <div className="md:col-span-5">
-              <h4 className="font-mono text-white font-semibold uppercase tracking-wider text-[11px] mb-4">
+              <div className="text-white font-semibold uppercase tracking-wider text-[11px] mb-4">
                 Contest Links
-              </h4>
+              </div>
               <ul className="space-y-2.5 font-light text-white/60">
                 <li>
                   <a
