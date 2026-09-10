@@ -124,9 +124,9 @@ export default function Home() {
           {/* LOGO */}
           <a href="#" className="flex items-center pl-8 group">
             <img
-              src="/gdg-logo-black.png"
+              src="/gdg-logo.png"
               alt="GDG Logo"
-              className="w-9 h-9 object-contain group-hover:scale-105 transition-all"
+              className="h-8 sm:h-9 w-auto object-contain group-hover:scale-105 transition-all"
             />
           </a>
 
@@ -345,20 +345,12 @@ export default function Home() {
 
             {/* BRAND COL */}
             <div className="md:col-span-7 flex flex-col items-start pr-0 md:pr-10">
-              <a href="#" className="flex items-center gap-2.5 mb-4 group">
+              <a href="#" className="flex items-center mb-4 group">
                 <img
-                  src="/gdg-logo-black.png"
+                  src="/gdg-logo.png"
                   alt="GDG Logo"
-                  className="w-9 h-9 object-contain"
+                  className="h-9 sm:h-10 w-auto object-contain"
                 />
-                <div className="flex flex-col">
-                  <span className="text-2xl font-normal font-heading text-white tracking-tight leading-none">
-                    Bappa Ka Prashad
-                  </span>
-                  <span className="text-[10px] font-mono text-amber-200/60 uppercase tracking-wider mt-0.5">
-                    GDG On Campus, Ramdeobaba University
-                  </span>
-                </div>
               </a>
               <p className="text-white/50 leading-relaxed max-w-sm mb-6 font-light">
                 An annual competitive programming contest bringing together algorithmic problem solving, student talent, and the festive celebration of Ganesh Chaturthi.
@@ -458,9 +450,9 @@ export default function Home() {
               <>
                 <div className="text-center mb-6">
                   <img
-                    src="/gdg-logo-black.png"
+                    src="/gdg-logo.png"
                     alt="GDG Logo"
-                    className="w-12 h-12 object-contain mx-auto mb-2"
+                    className="h-8 w-auto object-contain mx-auto mb-2.5"
                   />
                   <h3 className="text-2xl font-normal font-heading text-white">Bappa Ka Prashad 6.0</h3>
                   <p className="text-xs text-amber-200/70 mt-0.5">Register for the competitive programming contest</p>
