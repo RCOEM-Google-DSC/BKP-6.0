@@ -5,8 +5,7 @@ import {
   MapPin,
   Clock,
   ArrowRight,
-  Mail,
-  Heart
+  Mail
 } from "lucide-react";
 import GanpatiHeroElement from "@/components/GanpatiHeroElement";
 
@@ -368,10 +367,8 @@ export default function Home() {
 
           {/* BOTTOM COPYRIGHT & DESK INFO */}
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-white/40 font-light">
-            <div className="flex items-center gap-1">
-              <span>© 2026 GDG On Campus, Ramdeobaba University. Built with</span>
-              <Heart className="w-3 h-3 text-amber-300 fill-amber-300" />
-              <span>for Bappa Ka Prashad 6.0</span>
+            <div>
+              © 2026 GDG On Campus, Ramdeobaba University. All rights reserved.
             </div>
 
             <div className="flex items-center gap-4">
