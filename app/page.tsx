@@ -99,7 +99,7 @@ export default function Home() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="sticky top-0 z-40"
         >
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-3">
+          <div className="max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-3">
             
             {/* LOGO */}
             <motion.a
@@ -157,17 +157,17 @@ export default function Home() {
         </motion.header>
 
         {/* --- MAIN HERO SECTION --- */}
-        <main className="relative z-10 flex-1 flex items-center pt-8 pb-4 lg:pt-10 lg:pb-4 text-white">
-          <div className="max-w-6xl mx-auto px-6 relative z-10 w-full">
+        <main className="relative z-10 flex-1 flex flex-col justify-end pt-2 sm:pt-4 pb-0 text-white">
+          <div className="max-w-6xl xl:max-w-7xl mx-auto px-6 relative z-10 w-full flex-1 flex flex-col justify-end min-h-0">
             
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-end">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-end w-full flex-1 min-h-0">
               
-              {/* HERO TEXT */}
+              {/* HERO TEXT (VERTICALLY CENTERED, NO ARTIFICIAL PULL DOWN) */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="lg:col-span-6 flex flex-col items-start pb-4 z-10"
+                className="lg:col-span-5 xl:col-span-5 flex flex-col items-start z-10 self-center py-6 sm:py-10"
               >
 
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-normal font-heading tracking-tight text-white leading-[1.08] mb-5">
@@ -227,32 +227,32 @@ export default function Home() {
 
               </motion.div>
 
-              {/* HERO GANPATI VECTOR CENTERPIECE SITTING RIGHT ABOVE THE COUNTER */}
+              {/* HERO GANPATI VECTOR CENTERPIECE (LARGE & STICKED TO COUNTER) */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.92 }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
-                className="lg:col-span-6 flex justify-center items-end relative min-h-[340px] sm:min-h-[420px] w-full pb-0 -mb-4 lg:-mb-6"
+                className="lg:col-span-7 xl:col-span-7 flex justify-center lg:justify-end items-end relative w-full self-end pb-0 -mb-[1px]"
               >
                 
-                {/* ADDITIONAL AMBIENT SHINES */}
+                {/* AMBIENT SHINES */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <motion.div
                     animate={{
-                      scale: [1, 1.2, 1],
-                      opacity: [0.5, 0.75, 0.5],
+                      scale: [1, 1.15, 1],
+                      opacity: [0.45, 0.7, 0.45],
                     }}
                     transition={{
                       duration: 4.5,
                       repeat: Infinity,
                       ease: "easeInOut",
                     }}
-                    className="w-[300px] h-[300px] sm:w-[420px] sm:h-[420px] bg-amber-400/20 rounded-full blur-3xl"
+                    className="w-[420px] h-[420px] sm:w-[560px] sm:h-[560px] lg:w-[680px] lg:h-[680px] bg-amber-400/20 rounded-full blur-3xl"
                   />
                 </div>
 
-                {/* DIRECT SVG HERO COMPONENT WITH FLOATING ANIMATION */}
-                <div className="relative w-full max-w-[500px] sm:max-w-[580px] flex items-end justify-center z-10">
+                {/* DIRECT SVG HERO COMPONENT */}
+                <div className="relative w-full max-w-[520px] sm:max-w-[600px] lg:max-w-[680px] xl:max-w-[760px] flex items-end justify-center lg:justify-end z-10">
                   <GanpatiHeroElement />
                 </div>
 
@@ -270,7 +270,7 @@ export default function Home() {
           transition={{ duration: 0.7, delay: 0.4 }}
           className="bg-black/25 backdrop-blur-md border-y border-white/10 py-6 sm:py-8 relative z-10 shrink-0"
         >
-          <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="max-w-6xl xl:max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
             
             {/* LABEL & TIME CONFIRMATION */}
             <div className="flex items-center gap-3 text-center md:text-left">
@@ -291,8 +291,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* DIGITS DISPLAY */}
-            <div className="flex items-center gap-4 sm:gap-8 text-center">
+            {/* DIGITS DISPLAY (RIGHT ALIGNED) */}
+            <div className="flex items-center gap-6 sm:gap-10 text-center">
               
               {/* DAYS */}
               <div className="flex flex-col items-center">
