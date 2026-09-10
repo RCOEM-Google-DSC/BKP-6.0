@@ -55,7 +55,7 @@ export default function Home() {
 
       {/* ====== GRADIENT ZONE: header + hero + countdown ====== */}
       <div
-        className="text-white relative overflow-hidden"
+        className="text-white relative overflow-hidden min-h-screen flex flex-col"
         style={{
           background: "radial-gradient(circle at 75% 35%, #FF941A 0%, #ED6724 18%, #DA392F 35%, #AB232D 60%, #7C0D2B 100%)",
         }}
@@ -105,7 +105,7 @@ export default function Home() {
       </header>
 
       {/* --- MAIN HERO SECTION --- */}
-      <main className="relative z-10 my-auto pt-10 pb-4 lg:pt-14 lg:pb-6 text-white">
+      <main className="relative z-10 flex-1 flex items-center pt-10 pb-4 lg:pt-14 lg:pb-6 text-white">
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-end">
@@ -372,9 +372,9 @@ export default function Home() {
             </div>
 
             <div className="flex items-center gap-4">
-              <a href="mailto:dsc.rknec@gmail.com" className="hover:text-white/70 transition-colors flex items-center gap-1">
+              <a href="mailto:gdsc@rknec.edu" className="hover:text-white/70 transition-colors flex items-center gap-1">
                 <Mail className="w-3 h-3" />
-                <span>dsc.rknec@gmail.com</span>
+                <span>gdsc@rknec.edu</span>
               </a>
               <span>•</span>
               <span className="flex items-center gap-1">
