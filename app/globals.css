@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+html {
+  font-size: 112%;
+}
+
+@font-face {
+  font-family: 'Mileast';
+  src: url('/fonts/Mileast.otf') format('opentype'),
+       url('/fonts/Mileast.ttf') format('truetype'),
+       url('/fonts/Mileast.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('/fonts/ProductSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('/fonts/ProductSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --font-heading: 'Mileast', 'Marcellus', 'Cinzel', serif;
+    --font-body: 'Product Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #ffffff;
+    color: #18181b;
+    overflow-x: hidden;
+  }
+
+  /* Every element defaults to Product Sans unless overridden */
+  *, *::before, *::after {
+    font-family: inherit;
+  }
+
+  .font-sans, .font-serif, .font-mono {
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  /* Use this only for actual code / numbers that need monospace */
+  .font-code {
+    font-family: var(--font-mono);
+  }
+}
+
+.text-gradient-fire {
+  background: linear-gradient(135deg, #FFE896 0%, #FFB03A 40%, #FFFFFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-fire {
+  background: linear-gradient(135deg, #FF941A 0%, #DA392F 100%);
+}
+
+.text-gradient-fire-dark {
+  background: linear-gradient(135deg, #ED6724 0%, #DA392F 60%, #AB232D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #7C0D2B;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF941A;
+}
