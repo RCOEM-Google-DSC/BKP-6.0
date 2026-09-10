@@ -72,19 +72,19 @@ export default function Home() {
 
       {/* --- MATCHING GRADIENT HEADER --- */}
       <header className="sticky top-0 z-40">
-        <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-3">
           
           {/* LOGO */}
-          <a href="#" className="flex items-center pl-8 group">
+          <a href="#" className="flex items-center shrink-0 group">
             <img
               src="/gdg-logo.png"
               alt="GDG Logo"
-              className="h-8 sm:h-9 w-auto object-contain group-hover:scale-105 transition-all"
+              className="h-6 sm:h-9 max-w-[180px] sm:max-w-none w-auto object-contain group-hover:scale-105 transition-all"
             />
           </a>
 
           {/* DESK NAV LINKS & ACTIONS */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4 sm:gap-6 shrink-0">
             <nav className="hidden md:flex items-center gap-6 text-xs font-medium text-amber-100/80">
               <a href="#about" className="hover:text-white transition-colors">About</a>
               <a href="#prizes" className="hover:text-white transition-colors">Prizes</a>
@@ -96,7 +96,7 @@ export default function Home() {
               href={REGISTRATION_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 rounded-full bg-white text-zinc-950 hover:bg-amber-100 text-xs font-bold tracking-wide transition-all shadow-md inline-block"
+              className="px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full bg-white text-zinc-950 hover:bg-amber-100 text-xs font-bold tracking-wide transition-all shadow-md inline-block whitespace-nowrap shrink-0"
             >
               Register Now
             </a>
