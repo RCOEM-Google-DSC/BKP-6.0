@@ -5,9 +5,9 @@ export const metadata: Metadata = {
   title: "Bappa Ka Prashad 6.0 | GDG On Campus, Ramdeobaba University",
   description: "An annual competitive programming contest organized by GDG On Campus, Ramdeobaba University, blending technology, algorithms, and Ganesh Chaturthi tradition.",
   icons: {
-    icon: "/gdg-logo-black.png",
-    shortcut: "/gdg-logo-black.png",
-    apple: "/gdg-logo-black.png",
+    icon: "/favicon.ico?v=2",
+    shortcut: "/favicon.ico?v=2",
+    apple: "/favicon.png?v=2",
   },
 };
 
