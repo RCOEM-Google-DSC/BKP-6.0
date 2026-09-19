@@ -12,13 +12,12 @@ import { motion } from "framer-motion";
 import GanpatiHeroElement from "@/components/GanpatiHeroElement";
 
 // --- COMMUNITY & DEVELOPER PARTNERS ---
-const SPONSORS = [
-  { name: "GDG Nagpur", category: "Developer Community", role: "Community Partner" },
-  { name: "GDG Cloud Nagpur", category: "Cloud & Ecosystem", role: "Community Partner" },
-  { name: "DotSlash", category: "Coding Club", role: "Ecosystem Partner" },
-  { name: "NexMeet", category: "Tech Platform", role: "Community Partner" },
-  { name: "GDG YCCE", category: "Student Network", role: "Campus Partner" },
-  { name: "GDG CCOEW", category: "Student Network", role: "Campus Partner" },
+const COMMUNITY_PARTNERS = [
+  { name: "GDG On Campus, GHRCE Nagpur", logo: "/logos/logo 1.png", role: "Community Partner" },
+  { name: "GDG On Campus, JDCOEM", logo: "/logos/logo 2.png", role: "Community Partner" },
+  { name: "GDG On Campus, CCOEW Nagpur", logo: "/logos/logo 3.png", role: "Community Partner" },
+  { name: "GDG On Campus, PCE", logo: "/logos/logo 4.png", role: "Community Partner" },
+  { name: "GDG On Campus, Vishwaniketan's iMEET", logo: "/logos/logo 5.png", role: "Community Partner" },
 ];
 
 const REGISTRATION_URL = "https://unstop.com/p/bappa-ka-prashad-60-google-developer-groupgdg-rbu-1752279";
@@ -465,12 +464,13 @@ export default function Home() {
             </p>
           </motion.div>
 
+          {/* PLATFORM PARTNER - CodeChef (featured) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="flex justify-center"
+            className="flex justify-center mb-16"
           >
             <motion.div
               whileHover={{ scale: 1.05, y: -4 }}
@@ -481,6 +481,46 @@ export default function Home() {
               <span className="text-xs text-[#AB232D] uppercase tracking-widest font-semibold">Platform Partner</span>
             </motion.div>
           </motion.div>
+
+          {/* COMMUNITY PARTNERS - Logo Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-10"
+          >
+            <h3 className="text-lg sm:text-xl font-heading font-normal text-zinc-700 uppercase tracking-wider">
+              Community Partners
+            </h3>
+            <div className="w-12 h-0.5 bg-gradient-to-r from-[#FF941A] to-[#DA392F] mx-auto mt-3 rounded-full" />
+          </motion.div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 items-stretch">
+            {COMMUNITY_PARTNERS.map((partner, i) => (
+              <motion.div
+                key={partner.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                whileHover={{ y: -6, scale: 1.04 }}
+                className="group flex flex-col items-center p-5 rounded-2xl border border-zinc-100 hover:border-amber-200 bg-white shadow-sm hover:shadow-lg transition-all cursor-default h-full"
+              >
+                <div className="w-full aspect-square flex items-center justify-center p-3 rounded-xl bg-zinc-50/50 group-hover:bg-amber-50/50 transition-colors flex-shrink-0">
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="text-center mt-auto pt-3">
+                  <div className="text-xs font-medium text-zinc-700 leading-tight">{partner.name}</div>
+                  <div className="text-[10px] text-[#AB232D] uppercase tracking-widest font-semibold mt-1">{partner.role}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
 
         </div>
       </section>
