@@ -13,11 +13,11 @@ import GanpatiHeroElement from "@/components/GanpatiHeroElement";
 
 // --- COMMUNITY & DEVELOPER PARTNERS ---
 const COMMUNITY_PARTNERS = [
-  { name: "GDG On Campus, GHRCE Nagpur", logo: "/logos/logo 1.png", role: "Community Partner" },
-  { name: "GDG On Campus, JDCOEM", logo: "/logos/logo 2.png", role: "Community Partner" },
-  { name: "GDG On Campus, CCOEW Nagpur", logo: "/logos/logo 3.png", role: "Community Partner" },
-  { name: "GDG On Campus, PCE", logo: "/logos/logo 4.png", role: "Community Partner" },
-  { name: "GDG On Campus, Vishwaniketan's iMEET", logo: "/logos/logo 5.png", role: "Community Partner" },
+  { name: "GDG On Campus, GHRCE Nagpur", logo: "/logos/logo1.png", role: "Community Partner" },
+  { name: "GDG On Campus, JDCOEM", logo: "/logos/logo2.png", role: "Community Partner" },
+  { name: "GDG On Campus, CCOEW Nagpur", logo: "/logos/logo3.png", role: "Community Partner" },
+  { name: "GDG On Campus, PCE", logo: "/logos/logo4.png", role: "Community Partner" },
+  { name: "GDG On Campus, Vishwaniketan's iMEET", logo: "/logos/logo5.png", role: "Community Partner" },
 ];
 
 const REGISTRATION_URL = "https://unstop.com/p/bappa-ka-prashad-60-google-developer-groupgdg-rbu-1752279";
