@@ -11,6 +11,7 @@ import {
 import { motion } from "framer-motion";
 import GanpatiHeroElement from "@/components/GanpatiHeroElement";
 
+import { Copyright } from "lucide-react";
 // --- COMMUNITY & DEVELOPER PARTNERS ---
 const COMMUNITY_PARTNERS = [
   { name: "GDG On Campus, GHRCE Nagpur", logo: "/logos/logo1.png", role: "Community Partner" },
@@ -140,16 +141,16 @@ export default function Home() {
                 </a>
               </nav>
 
-              <motion.a
-                whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(255,255,255,0.3)" }}
-                whileTap={{ scale: 0.96 }}
-                href={REGISTRATION_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full bg-white text-zinc-950 hover:bg-amber-100 text-xs font-bold tracking-wide transition-colors shadow-md inline-block whitespace-nowrap shrink-0"
-              >
-                Register Now
-              </motion.a>
+              {/* <motion.a */}
+              {/*   whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(255,255,255,0.3)" }} */}
+              {/*   whileTap={{ scale: 0.96 }} */}
+              {/*   href={REGISTRATION_URL} */}
+              {/*   target="_blank" */}
+              {/*   rel="noopener noreferrer" */}
+              {/*   className="px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full bg-white text-zinc-950 hover:bg-amber-100 text-xs font-bold tracking-wide transition-colors shadow-md inline-block whitespace-nowrap shrink-0" */}
+              {/* > */}
+              {/*   Register Now */}
+              {/* </motion.a> */}
             </div>
 
           </div>
@@ -201,17 +202,17 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: 0.35 }}
                   className="flex flex-wrap items-center gap-4 w-full sm:w-auto"
                 >
-                  <motion.a
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.96 }}
-                    href={REGISTRATION_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group w-full sm:w-auto px-8 py-3.5 rounded-full bg-white text-zinc-950 font-bold text-sm shadow-md hover:bg-amber-50 transition-all flex items-center justify-center gap-2"
-                  >
-                    <span>Participate Now</span>
-                    <ArrowRight className="w-4 h-4 text-[#DA392F] group-hover:translate-x-1 transition-transform" />
-                  </motion.a>
+                  {/* <motion.a */}
+                  {/*   whileHover={{ scale: 1.05 }} */}
+                  {/*   whileTap={{ scale: 0.96 }} */}
+                  {/*   href={REGISTRATION_URL} */}
+                  {/*   target="_blank" */}
+                  {/*   rel="noopener noreferrer" */}
+                  {/*   className="group w-full sm:w-auto px-8 py-3.5 rounded-full bg-white text-zinc-950 font-bold text-sm shadow-md hover:bg-amber-50 transition-all flex items-center justify-center gap-2" */}
+                  {/* > */}
+                  {/*   <span>Participate Now</span> */}
+                  {/*   <ArrowRight className="w-4 h-4 text-[#DA392F] group-hover:translate-x-1 transition-transform" /> */}
+                  {/* </motion.a> */}
 
                   <motion.a
                     whileHover={{ scale: 1.04 }}
@@ -263,84 +264,6 @@ export default function Home() {
         </main>
 
         {/* --- COUNTDOWN TIMER BANNER --- */}
-        <motion.section
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="bg-black/25 backdrop-blur-md border-y border-white/10 py-6 sm:py-8 relative z-10 shrink-0"
-        >
-          <div className="max-w-6xl xl:max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-            
-            {/* LABEL & TIME CONFIRMATION */}
-            <div className="flex items-center gap-3 text-center md:text-left">
-              <motion.div
-                animate={{ rotate: [0, 6, -6, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="p-2.5 rounded-full bg-white/10 border border-white/20 text-[#FF941A] shrink-0"
-              >
-                <Clock className="w-5 h-5" />
-              </motion.div>
-              <div>
-                <div className="text-xs uppercase tracking-wider text-amber-200/70 font-medium">Countdown</div>
-                <div className="text-base font-semibold font-heading text-white">Contest Begins In</div>
-                <div className="flex items-center gap-1.5 text-[11px] text-amber-200/80 mt-0.5 font-light">
-                  <Calendar className="w-3 h-3 text-[#FF941A]" />
-                  <span>20 Sep 2026 • 8:00 PM IST</span>
-                </div>
-              </div>
-            </div>
-
-            {/* DIGITS DISPLAY (RIGHT ALIGNED) */}
-            <div className="flex items-center gap-6 sm:gap-10 text-center">
-              
-              {/* DAYS */}
-              <div className="flex flex-col items-center">
-                <div className="text-3xl sm:text-4xl font-extrabold text-white font-mono tracking-wider">
-                  {timeLeft !== null ? String(timeLeft.days).padStart(2, "0") : "--"}
-                </div>
-                <div className="text-[11px] text-amber-200/70 uppercase mt-0.5 font-medium tracking-wide">Days</div>
-              </div>
-
-              <span className="text-2xl font-light text-white/30 -translate-y-2">:</span>
-
-              {/* HOURS */}
-              <div className="flex flex-col items-center">
-                <div className="text-3xl sm:text-4xl font-extrabold text-white font-mono tracking-wider">
-                  {timeLeft !== null ? String(timeLeft.hours).padStart(2, "0") : "--"}
-                </div>
-                <div className="text-[11px] text-amber-200/70 uppercase mt-0.5 font-medium tracking-wide">Hours</div>
-              </div>
-
-              <span className="text-2xl font-light text-white/30 -translate-y-2">:</span>
-
-              {/* MINS */}
-              <div className="flex flex-col items-center">
-                <div className="text-3xl sm:text-4xl font-extrabold text-white font-mono tracking-wider">
-                  {timeLeft !== null ? String(timeLeft.minutes).padStart(2, "0") : "--"}
-                </div>
-                <div className="text-[11px] text-amber-200/70 uppercase mt-0.5 font-medium tracking-wide">Mins</div>
-              </div>
-
-              <span className="text-2xl font-light text-white/30 -translate-y-2">:</span>
-
-              {/* SECS */}
-              <div className="flex flex-col items-center">
-                <motion.div
-                  key={timeLeft?.seconds ?? 0}
-                  initial={{ scale: 1.15, opacity: 0.8 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                  className="text-3xl sm:text-4xl font-extrabold text-[#FFE896] font-mono tracking-wider"
-                >
-                  {timeLeft !== null ? String(timeLeft.seconds).padStart(2, "0") : "--"}
-                </motion.div>
-                <div className="text-[11px] text-amber-200/70 uppercase mt-0.5 font-medium tracking-wide">Secs</div>
-              </div>
-
-            </div>
-
-          </div>
-        </motion.section>
 
       {/* ====== END GRADIENT ZONE ====== */}
       </div>
@@ -651,12 +574,12 @@ export default function Home() {
           </div>
 
           {/* BOTTOM COPYRIGHT & DESK INFO */}
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-white/40 font-light">
-            <div>
-              © 2026 GDG On Campus, Ramdeobaba University. All rights reserved.
+          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4  font-light">
+            <div className="flex items-center gap-1  text-white/40">
+            <Copyright size={14}/> 2026 GDG On Campus, Ramdeobaba University. All rights reserved.
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 text-md text-white/40">
               <a href="mailto:gdsc@rknec.edu" className="hover:text-white/70 transition-colors flex items-center gap-1">
                 <Mail className="w-3 h-3" />
                 <span>gdsc@rknec.edu</span>
